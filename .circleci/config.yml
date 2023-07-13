@@ -21,8 +21,6 @@ workflows:
             branches:
               only:
                 - master
-            tags:
-              ignore: /.*/
             pull-requests:
               types:
                 - opened
