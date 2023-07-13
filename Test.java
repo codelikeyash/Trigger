@@ -12,8 +12,8 @@ public class Test extends Source{
             System.out.println("Test Case Passed\n");
         if(s.addNum(5, 4) == 9)
             System.out.println("Test Case Passed\n");
-            
-        assert (s.addNum(2, 2) == 5);
+
+        assert (s.addNum(2, 3) == 5);
     }
     
 
