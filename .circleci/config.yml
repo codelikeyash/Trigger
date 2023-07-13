@@ -8,7 +8,7 @@ jobs:
     steps:
       - checkout
       - run: javac Source.java
-      - run: java hh
+      - run: java Source
   test:
     working_directory: ~/Trigger
     docker:
