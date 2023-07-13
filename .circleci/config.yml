@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  build-and-test:
+  build:
     working_directory: ~/Trigger
     docker:
       - image: "cimg/openjdk:11.0"
@@ -9,20 +9,19 @@ jobs:
       - checkout
       - run: javac Source.java
       - run: java Source
+  test:
+    working_directory: ~/Trigger
+    docker:
+      - image: "cimg/openjdk:11.0"
+    steps:
+      - checkout
       - run: javac Test.java
       - run: java -ea Test
 
 workflows:
-  version: 2
-  workflow-name:
+  build_and_test:
     jobs:
-      - build-and-test:
-          filters:
-            branches:
-              only:
-                - master
-            pull-requests:
-              types:
-                - opened
-                - synchronize
-        
+      - build
+      - test:
+          requires:
+            - build
