@@ -2,7 +2,7 @@ version: 2.1
 
 jobs:
   build-and-test:
-    working_directory: ~/SampleCode
+    working_directory: ~/Trigger
     docker:
       - image: "cimg/openjdk:11.0"
     steps:
